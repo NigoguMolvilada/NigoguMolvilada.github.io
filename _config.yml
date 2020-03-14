@@ -13,14 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Nigogu + Movilada
-email: your-email@example.com
+title: Nigogu + Molvilada
+email: nigomezgu@unal.edu.co, ldmolinav@unal.edu.co
 description: >- # this means to ignore newlines until "baseurl:"
   A continuación se listan los trabajos realizados para la asignatura Computación Visual en el semestre 2020-1.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://nigogumolvilada.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username: NigoguMolvilada
+twitter_username: Nigogu, Molvilada
+github_username: Nigogu, Molvilada
 
 # Build settings
 markdown: kramdown
