@@ -1,7 +1,8 @@
 let Img;
 let ImgColor;
-let resolution = 4;
+let resolution = 5;
 let ascii;
+let myFont;
 
 function preload() {
     Img = loadImage('/sketches/image_to_ascii/perro.PNG');
@@ -12,12 +13,13 @@ function setup() {
     var myCanvas = createCanvas(749,422); 
     myCanvas.parent("sketch-holder");   
     ascii = new Array(256);
-    let chars = "@%#*+=-:. ";
+    let chars = "@%#*+o=-:. ";
     for (let i = 0; i < 256; i++) {
         let index = parseInt(map(i, 0, 256, 0, chars.length));
         ascii[i] = chars.charAt(index);
     }
-    textFont("Roboto", resolution + 2); 
+    textFont("Roboto"); 
+    textSize(resolution + 2);
     
 }
 

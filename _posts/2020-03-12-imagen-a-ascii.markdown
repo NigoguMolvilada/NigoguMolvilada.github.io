@@ -34,8 +34,7 @@ int resolution = 4;
 char[] ascii;
  
 void setup() {
-  // url en donde se encuentra la imagen a utilizar  
-  // Se carga la imagen web
+  // Se carga la imagen
   Img = loadImage("perro.PNG");
   ImgColor = loadImage("perro.PNG");
   
@@ -45,7 +44,7 @@ void setup() {
   ascii = new char[256];
   
   // Se crea un arreglo de char llamado chars que contiene los caracteres a utilizar
-  String chars = "$@%#*+ot=-:. ";
+  String chars = "@%#*+=-:. ";
   
   // Se llena el arreglo ascii de manera que sus posiciones se vayan llenando de acuerdo a los caracteres, quedaría asi:
   // ##########################@@@@@@@@@@@@@@@@@@@@@@@@@@WWWWWWWWWWWWWWWWWWWWWWWWWaaaaaaaaaaaaaaaaaaaaaaaaaadddddddddddddddddddddddddoooooooooooooooooooooooooo**************************-------------------------..........................
@@ -56,7 +55,7 @@ void setup() {
   
   // PFont es un tipo de dato para almacenar fuentes
   // Se determina que fuente y tamaño de fuente se va a usar
-  PFont mono = createFont("Roboto", resolution + 2);
+  PFont mono = createFont("Consolas", resolution + 2);
   textFont(mono); 
   
 }
@@ -80,7 +79,6 @@ void draw(){
 void asciify() {
   // Ya que el texto es solo en blanco y negro, se hace la conversión de la imagen a escala de grises para calcular de forma más precisa el brillo
   Img.filter(GRAY);
-  
   Img.loadPixels();
    
   // Toma el color de cada enésimo píxel de la imagen y lo reemplaza con el carácter de brillo similar
@@ -98,26 +96,28 @@ void asciify() {
 La traducción a p5.js corresponde al siguiente código:
 
 {% highlight javascript %}
-let webImg;
-let webImgColor;
-let resolution = 4;
+let Img;
+let ImgColor;
+let resolution = 5;
 let ascii;
+let myFont;
 
 function preload() {
-    webImg = loadImage('/sketches/image_to_ascii/perro.PNG');
-    webImgColor = loadImage('/sketches/image_to_ascii/perro.PNG');
+    Img = loadImage('/sketches/image_to_ascii/perro.PNG');
+    ImgColor = loadImage('/sketches/image_to_ascii/perro.PNG');
 }
 
 function setup() {
     var myCanvas = createCanvas(749,422); 
     myCanvas.parent("sketch-holder");   
     ascii = new Array(256);
-    let chars = "@%#*+=-:. ";
+    let chars = "@%#*+o=-:. ";
     for (let i = 0; i < 256; i++) {
         let index = parseInt(map(i, 0, 256, 0, chars.length));
         ascii[i] = chars.charAt(index);
     }
-    textFont("Roboto Mono", resolution + 2); 
+    textFont("Roboto"); 
+    textSize(resolution + 2);
     
 }
 
@@ -126,7 +126,7 @@ function draw(){
     fill(0);
 
     if (mouseIsPressed) {
-        image(webImgColor,0,0);
+        image(ImgColor,0,0);
     } else {
         asciify();
     }
@@ -134,13 +134,13 @@ function draw(){
 }
 
 function asciify() {
-  webImg.filter(GRAY);
+  Img.filter(GRAY);
   
-  webImg.loadPixels();
+  Img.loadPixels();
    
-  for (var y = 0; y < webImg.height; y += resolution) {
-    for (var x = 0; x < webImg.width; x += resolution) {
-        let pixel = webImg.get(x,y);
+  for (var y = 0; y < Img.height; y += resolution) {
+    for (var x = 0; x < Img.width; x += resolution) {
+        let pixel = Img.get(x,y);
         text(ascii[int(brightness(pixel))], x, y);
     }
   }
