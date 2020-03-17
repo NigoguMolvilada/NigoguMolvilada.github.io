@@ -25,8 +25,8 @@ El código en processing es el siguiente:
 
 // PImage es un tipo de dato para almacenar imágenes
 // Se crea la variable webImag
-PImage webImg;
-PImage webImgColor;
+PImage Img;
+PImage ImgColor;
 // Resolución de muestreo: los colores se muestrearán cada n pixeles para determinar que caracter mostrar
 int resolution = 4;
  
@@ -34,12 +34,10 @@ int resolution = 4;
 char[] ascii;
  
 void setup() {
-  // url en donde se encuentra la imagen a utilizar
-  String url = "https://www.infobae.com/new-resizer/kAjCyEfwdw0H57sLGDM5OOrTFUI=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/04/06155038/perro-beso-1024x576.jpg";
-  
+  // url en donde se encuentra la imagen a utilizar  
   // Se carga la imagen web
-  webImg = loadImage(url, "jpg");
-  webImgColor = loadImage(url, "jpg");
+  Img = loadImage("perro.PNG");
+  ImgColor = loadImage("perro.PNG");
   
   // Se determina el tamaño de la ventana de processing (donde se va a mostrar la imagen resultado)
   size(750,422);
@@ -58,20 +56,20 @@ void setup() {
   
   // PFont es un tipo de dato para almacenar fuentes
   // Se determina que fuente y tamaño de fuente se va a usar
-  PFont mono = createFont("Consolas", resolution + 2);
+  PFont mono = createFont("Roboto", resolution + 2);
   textFont(mono); 
   
 }
 
 void draw(){
-  surface.setSize(webImg.width, webImg.height);
+  surface.setSize(Img.width, Img.height);
   // Se determina el color de fondo de ventana de processing (blanco)
   background(255);
   // Se determina el color de los caracteres (negro)
   fill(0);
   
   if (mousePressed == true) {
-    image(webImgColor,0,0);
+    image(ImgColor,0,0);
   } else {
     asciify();
   }
@@ -81,14 +79,14 @@ void draw(){
  
 void asciify() {
   // Ya que el texto es solo en blanco y negro, se hace la conversión de la imagen a escala de grises para calcular de forma más precisa el brillo
-  webImg.filter(GRAY);
+  Img.filter(GRAY);
   
-  webImg.loadPixels();
+  Img.loadPixels();
    
   // Toma el color de cada enésimo píxel de la imagen y lo reemplaza con el carácter de brillo similar
-  for (int y = 0; y < webImg.height; y += resolution) {
-    for (int x = 0; x < webImg.width; x += resolution) {
-      color pixel = webImg.get(x,y);
+  for (int y = 0; y < Img.height; y += resolution) {
+    for (int x = 0; x < Img.width; x += resolution) {
+      color pixel = Img.get(x,y);
       // Se imprime el caracter determinado a ese brillo, en la posicion (x, y)
       text(ascii[int(brightness(pixel))], x, y);
     }

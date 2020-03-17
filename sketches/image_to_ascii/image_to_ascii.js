@@ -1,11 +1,11 @@
-let webImg;
-let webImgColor;
+let Img;
+let ImgColor;
 let resolution = 4;
 let ascii;
 
 function preload() {
-    webImg = loadImage('/sketches/image_to_ascii/perro.PNG');
-    webImgColor = loadImage('/sketches/image_to_ascii/perro.PNG');
+    Img = loadImage('/sketches/image_to_ascii/perro.PNG');
+    ImgColor = loadImage('/sketches/image_to_ascii/perro.PNG');
 }
 
 function setup() {
@@ -17,7 +17,7 @@ function setup() {
         let index = parseInt(map(i, 0, 256, 0, chars.length));
         ascii[i] = chars.charAt(index);
     }
-    textFont("Roboto Mono", resolution + 2); 
+    textFont("Roboto", resolution + 2); 
     
 }
 
@@ -26,7 +26,7 @@ function draw(){
     fill(0);
 
     if (mouseIsPressed) {
-        image(webImgColor,0,0);
+        image(ImgColor,0,0);
     } else {
         asciify();
     }
@@ -34,23 +34,14 @@ function draw(){
 }
 
 function asciify() {
-  webImg.filter(GRAY);
+  Img.filter(GRAY);
   
-  webImg.loadPixels();
+  Img.loadPixels();
    
-  for (var y = 0; y < webImg.height; y += resolution) {
-    for (var x = 0; x < webImg.width; x += resolution) {
-        let pixel = webImg.get(x,y);
+  for (var y = 0; y < Img.height; y += resolution) {
+    for (var x = 0; x < Img.width; x += resolution) {
+        let pixel = Img.get(x,y);
         text(ascii[int(brightness(pixel))], x, y);
     }
   }
 }
-
-// function setup() {
-//     var myCanvas = createCanvas(100, 100);
-//     myCanvas.parent("sketch-holder");
-// }
-
-// function draw() {
-//   ellipse(50, 50, 80, 80);
-// }
