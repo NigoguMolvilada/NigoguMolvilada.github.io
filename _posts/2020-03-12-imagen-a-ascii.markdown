@@ -24,7 +24,7 @@ El código en processing es el siguiente:
 // Programa para pasar imagen a texto
 
 // PImage es un tipo de dato para almacenar imágenes
-// Se crea la variable webImag
+// Se crea la variable Imag
 PImage Img;
 PImage ImgColor;
 // Resolución de muestreo: los colores se muestrearán cada n pixeles para determinar que caracter mostrar
