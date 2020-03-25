@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Estudio de cómo convertir a imagenes a ASCII"
+title: "Estudio de cómo convertir a imágenes a ASCII"
 date: 2020-03-12 21:32:58 -0500
 categories: imagenes ASCII
 ---
 
+Al realizar un simple búsqueda en Google de 'image to ASCII' nos encontramos con múltiples convertidores automáticos, sin embargo, es de nuestro interés investigar cómo se hace este proceso y no solo convertir una imagen a caracteres.
+
 <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
 <script src="/sketches/image_to_ascii/image_to_ascii.js"></script>
-
-Al realizar un simple búsqueda en Google de 'image to ASCII' nos encontramos con múltiples convertidores automáticos, sin embargo, es de nuestro interés investigar cómo se hace este proceso y no solo convertir una imagen a caracteres.
 
 Realizamos la practica en processing pero para poder visualizarla en la página decidimos pasarla a p5.js.
 

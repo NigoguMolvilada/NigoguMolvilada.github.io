@@ -1,6 +1,7 @@
 ---
+layout: post
 title: "Página estática en GitHub pages"
-date: 2020-03-12 21:32:58 -0500
+date: 2020-03-12 20:00:00 -0500
 categories: jekyll github ruby
 ---
 
