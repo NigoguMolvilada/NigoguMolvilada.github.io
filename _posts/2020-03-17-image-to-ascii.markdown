@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Estudio de cómo convertir a imágenes a ASCII"
-date: 2020-03-12 21:32:58 -0500
+date: 2020-03-17 20:00:00 -0500
 categories: imagenes ASCII
 ---
 

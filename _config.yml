@@ -16,7 +16,7 @@
 title: Nigogu + Molvilada
 email: nigomezgu@unal.edu.co, ldmolinav@unal.edu.co
 description: >- # this means to ignore newlines until "baseurl:"
-  A continuación se listan los trabajos realizados para la asignatura Computación Visual en el semestre 2020-1.
+  Página dedicada para los trabajos de la asignatura Computación Visual en el semestre 2020-1.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://nigogumolvilada.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Nigogu, Molvilada
@@ -24,13 +24,14 @@ github_username: Nigogu, Molvilada
 logo: "./favicon.ico"
 
 read_time: true
-words_per_minute: 100
+words_per_minute: 125
 locale: "es"
+date_format: "%d/%m/%y"
 
 # Build settings
 markdown: kramdown
 remote_theme: "mmistakes/so-simple-theme@3.2.0"
-skin: "/assets/css/skins/dark.css"
+skin: "/assets/css/skins/ourdark.css"
 search_full_content: true
 plugins:
   - jekyll-feed
