@@ -19,8 +19,7 @@ function setup() {
         ascii[i] = chars.charAt(index);
     }
     textFont("Roboto"); 
-    textSize(resolution + 2);
-    
+    textSize(resolution + 2);    
 }
 
 function draw(){
@@ -32,12 +31,10 @@ function draw(){
     } else {
         asciify();
     }
-
 }
 
 function asciify() {
-  Img.filter(GRAY);
-  
+  Img.filter(GRAY);  
   Img.loadPixels();
    
   for (var y = 0; y < Img.height; y += resolution) {

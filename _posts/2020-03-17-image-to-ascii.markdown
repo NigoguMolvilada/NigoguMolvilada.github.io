@@ -2,16 +2,15 @@
 layout: post
 title: "Estudio de cómo convertir a imágenes a ASCII"
 date: 2020-03-17 20:00:00 -0500
-categories: imagenes ASCII
+permalink: image-to-ascii
 ---
 
-Al realizar un simple búsqueda en Google de 'image to ASCII' nos encontramos con múltiples convertidores automáticos, sin embargo, es de nuestro interés investigar cómo se hace este proceso y no solo convertir una imagen a caracteres.
+En este post se hace una documentación del estudio realizado para convertir una imagen a caracteres ASCII a través de [Processing](https://processing.org/). Para motrar el resultado a nivel técnico del trabajo realizado se utilizó [p5.js](https://p5js.org/).
 
 <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
 <script src="/sketches/image_to_ascii/image_to_ascii.js"></script>
 
-Realizamos la practica en processing pero para poder visualizarla en la página decidimos pasarla a p5.js.
-
+Al realizar una simple búsqueda en Google de "image to ASCII" nos encontramos con múltiples convertidores automáticos, sin embargo, es de nuestro interés investigar cómo se hace este proceso y no solo convertir una imagen a caracteres. Realizamos la practica en processing pero para poder visualizarla en la página decidimos pasarla a p5.js.
 
 <div id="sketch-holder">
 Mantener clicleado encima de la imagen para ver la original:
@@ -19,7 +18,6 @@ Mantener clicleado encima de la imagen para ver la original:
 </div>
 
 El código en processing es el siguiente:
-
 {% highlight Java %}
 // Programa para pasar imagen a texto
 
@@ -56,8 +54,7 @@ void setup() {
   // PFont es un tipo de dato para almacenar fuentes
   // Se determina que fuente y tamaño de fuente se va a usar
   PFont mono = createFont("Consolas", resolution + 2);
-  textFont(mono); 
-  
+  textFont(mono);  
 }
 
 void draw(){
@@ -72,9 +69,7 @@ void draw(){
   } else {
     asciify();
   }
-
 }
-
  
 void asciify() {
   // Ya que el texto es solo en blanco y negro, se hace la conversión de la imagen a escala de grises para calcular de forma más precisa el brillo
@@ -91,7 +86,6 @@ void asciify() {
   }
 }
 {% endhighlight %}
-
 
 La traducción a p5.js corresponde al siguiente código:
 
@@ -117,8 +111,7 @@ function setup() {
         ascii[i] = chars.charAt(index);
     }
     textFont("Roboto"); 
-    textSize(resolution + 2);
-    
+    textSize(resolution + 2);    
 }
 
 function draw(){
@@ -130,12 +123,10 @@ function draw(){
     } else {
         asciify();
     }
-
 }
 
 function asciify() {
-  Img.filter(GRAY);
-  
+  Img.filter(GRAY);  
   Img.loadPixels();
    
   for (var y = 0; y < Img.height; y += resolution) {
