@@ -27,7 +27,7 @@ PImage Img;
 PImage ImgColor;
 
 // Resolución de muestreo: los colores se muestrearán cada n pixeles para determinar qué caracter mostrar.
-int resolution = 5;
+int resolution = 3;
 
 // Arreglo de tipo char que va a contener los caracteres en reemplazo de los píxeles.
 char[] ascii;
@@ -93,7 +93,7 @@ La traducción a p5.js corresponde al siguiente código:
 {% highlight javascript %}
 let Img;
 let ImgColor;
-let resolution = 5;
+let resolution = 3;
 let ascii;
 let myFont;
 
