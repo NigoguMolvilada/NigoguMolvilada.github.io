@@ -19,7 +19,7 @@ Mantener clickeado encima de la imagen para ver la original:
 
 El código en processing es el siguiente:
 
-{% highlight Java %}
+```java
 // Programa para pasar imagen a texto.
 
 // PImage es un tipo de dato para almacenar imágenes. Se crea la variable Img.
@@ -33,64 +33,65 @@ int resolution = 3;
 char[] ascii;
 
 void setup() {
-// Se carga la imagen.
-Img = loadImage("perro.PNG");
-ImgColor = loadImage("perro.PNG");
+  // Se carga la imagen.
+  Img = loadImage("perro.PNG");
+  ImgColor = loadImage("perro.PNG");
 
-// Se determina el tamaño de la ventana de Processing (donde se va a mostrar la imagen resultado):
-size(750,422);
-// Se inicializa el arreglo que corresponde a los valores de brillo (256 es la cantidad de valores de brillantez):
-ascii = new char[256];
+  // Se determina el tamaño de la ventana de Processing (donde se va a mostrar la imagen resultado):
+  size(750,422);
+  // Se inicializa el arreglo que corresponde a los valores de brillo (256 es la cantidad de valores de brillantez):
+  ascii = new char[256];
 
-// Se crea un arreglo de char llamado chars que contiene los caracteres a utilizar:
-String chars = "@%#\*+=-:. ";
+  // Se crea un arreglo de char llamado chars que contiene los caracteres a utilizar:
+  String chars = "@%#*+=-:. ";
 
-// Se llena el arreglo ASCII de manera que sus posiciones se vayan llenando de acuerdo a los caracteres
-for (int i = 0; i < 256; i++) {
-int index = int(map(i, 0, 256, 0, chars.length()));
-ascii[i] = chars.charAt(index);
-}
+  // Se llena el arreglo ASCII de manera que sus posiciones se vayan llenando de acuerdo a los caracteres
+  for (int i = 0; i < 256; i++) {
+    int index = int(map(i, 0, 256, 0, chars.length()));
+    ascii[i] = chars.charAt(index);
+  }
 
-// PFont es un tipo de dato para almacenar fuentes.
-// Se determina qué fuente y tamaño de fuente se va a usar.
-PFont mono = createFont("Consolas", resolution + 2);
-textFont(mono);  
+  // PFont es un tipo de dato para almacenar fuentes.
+  // Se determina qué fuente y tamaño de fuente se va a usar.
+  PFont mono = createFont("Roboto Mono", resolution + 2);
+  textFont(mono);
 }
 
 void draw(){
-surface.setSize(Img.width, Img.height);
-// Se determina el color de fondo de ventana de processing (blanco).
-background(255);
-// Se determina el color de los caracteres (negro).
-fill(0);
+  surface.setSize(Img.width, Img.height);
+  // Se determina el color de fondo de ventana de processing (blanco).
+  background(255);
+  // Se determina el color de los caracteres (negro).
+  fill(0);
 
-// Se determina la acción que activa el cambio.
-if (mousePressed == true) {
-image(ImgColor,0,0);
-} else {
-asciify();
-}
+  // Se determina la acción que activa el cambio.
+  if (mousePressed == true) {
+    image(ImgColor,0,0);
+  } else {
+    asciify();
+  }
 }
 
 void asciify() {
-// Ya que el resultado se hará solo en blanco y negro, se hace la conversión de la imagen a escala de grises para calcular de forma más precisa el brillo.
-Img.filter(GRAY);
-Img.loadPixels();
+  // Ya que el resultado se hará solo en blanco y negro, se hace la conversión de la imagen a escala de grises para calcular de forma más precisa el brillo.
+  Img.filter(GRAY);
+  Img.loadPixels();
 
-// Toma el color de cada enésimo píxel de la imagen y lo reemplaza con el carácter de brillo similar.
-for (int y = 0; y < Img.height; y += resolution) {
-for (int x = 0; x < Img.width; x += resolution) {
-color pixel = Img.get(x,y);
-// Se imprime el caracter determinado a ese brillo, en la posicion (x, y)
-text(ascii[int(brightness(pixel))], x, y);
+  // Toma el color de cada enésimo píxel de la imagen y lo reemplaza con el carácter de brillo similar.
+  for (int y = 0; y < Img.height; y += resolution) {
+    for (int x = 0; x < Img.width; x += resolution) {
+      color pixel = Img.get(x,y);
+      // Se imprime el caracter determinado a ese brillo, en la posicion (x, y)
+      text(ascii[int(brightness(pixel))], x, y);
+    }
+  }
 }
-}
-}
-{% endhighlight %}
+
+```
 
 La traducción a p5.js corresponde al siguiente código:
 
-{% highlight javascript %}
+```javascript
 let Img;
 let ImgColor;
 let resolution = 3;
@@ -98,47 +99,44 @@ let ascii;
 let myFont;
 
 function preload() {
-Img = loadImage('/sketches/image_to_ascii/perro.PNG');
-ImgColor = loadImage('/sketches/image_to_ascii/perro.PNG');
+  Img = loadImage("perro.PNG");
+  ImgColor = loadImage("perro.PNG");
 }
 
 function setup() {
-var myCanvas = createCanvas(749,422);
-myCanvas.parent("sketch-holder");
-ascii = new Array(256);
-let chars = "@%#\*+o=-:. ";
-for (let i = 0; i < 256; i++) {
-let index = parseInt(map(i, 0, 256, 0, chars.length));
-ascii[i] = chars.charAt(index);
+  createCanvas(750, 422);
+  ascii = new Array(256);
+  let chars = "@%#*+o=-:. ";
+  for (let i = 0; i < 256; i++) {
+    let index = parseInt(map(i, 0, 256, 0, chars.length));
+    ascii[i] = chars.charAt(index);
+  }
+  textFont("Roboto Mono");
+  textSize(resolution + 2);
 }
-textFont("Roboto");
-textSize(resolution + 2);
-}
 
-function draw(){
-background(255);
-fill(0);
+function draw() {
+  background(255);
+  fill(0);
 
-    if (mouseIsPressed) {
-        image(ImgColor,0,0);
-    } else {
-        asciify();
-    }
-
+  if (mouseIsPressed) {
+    image(ImgColor, 0, 0);
+  } else {
+    asciify();
+  }
 }
 
 function asciify() {
-Img.filter(GRAY);  
- Img.loadPixels();
+  Img.filter(GRAY);
+  Img.loadPixels();
 
-for (var y = 0; y < Img.height; y += resolution) {
-for (var x = 0; x < Img.width; x += resolution) {
-let pixel = Img.get(x,y);
-text(ascii[int(brightness(pixel))], x, y);
+  for (var y = 0; y < Img.height; y += resolution) {
+    for (var x = 0; x < Img.width; x += resolution) {
+      let pixel = Img.get(x, y);
+      text(ascii[int(brightness(pixel))], x, y);
+    }
+  }
 }
-}
-}
-
-{% endhighlight %}
+```
 
 Realizando cambios en los parámetros donde se determina el color del texto y del fondo, los caracteres utilizados y la función de activación, se pueden obtener otros resultados como los que se observan a continuación.

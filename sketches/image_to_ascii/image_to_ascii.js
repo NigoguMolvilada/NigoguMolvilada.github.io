@@ -18,7 +18,7 @@ function setup() {
     let index = parseInt(map(i, 0, 256, 0, chars.length));
     ascii[i] = chars.charAt(index);
   }
-  textFont("Roboto");
+  textFont("Roboto Mono");
   textSize(resolution + 2);
 }
 
