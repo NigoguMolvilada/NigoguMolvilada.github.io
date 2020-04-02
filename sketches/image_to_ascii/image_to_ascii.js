@@ -1,6 +1,6 @@
 let Img;
 let ImgColor;
-let resolution = 3;
+let resolution = 5;
 let ascii;
 let myFont;
 
@@ -10,7 +10,7 @@ function preload() {
 }
 
 function setup() {
-  var myCanvas = createCanvas(749, 422);
+  var myCanvas = createCanvas(750, 422);
   myCanvas.parent("sketch-holder");
   ascii = new Array(256);
   let chars = "@%#*+o=-:. ";
