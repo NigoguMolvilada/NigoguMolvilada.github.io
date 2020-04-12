@@ -5,7 +5,7 @@ PImage Img;
 PImage ImgColor;
 
 // Resolución de muestreo: los colores se muestrearán cada n pixeles para determinar qué caracter mostrar.
-int resolution = 7;
+int resolution = 6;
 
 // Arreglo de tipo char que va a contener los caracteres en reemplazo de los píxeles.
 char[] ascii;
@@ -22,7 +22,7 @@ void setup() {
   ascii = new char[256];
   
   // Se crea un arreglo de char llamado chars que contiene los caracteres a utilizar:
-  String chars = "@%#*+=-:. ";
+  String chars = "|*. ";
   
   // Se llena el arreglo ASCII de manera que sus posiciones se vayan llenando de acuerdo a los caracteres
   for (int i = 0; i < 256; i++) {
@@ -37,17 +37,17 @@ void setup() {
 }
 
 void draw(){
-  // Se determina el color de fondo de ventana de processing (blanco).
-  background(255);
-  // Se determina el color de los caracteres (negro).
-  fill(0);
+  // Se determina el color de fondo de ventana de processing (negro).
+  background(0);
+  // Se determina el color de los caracteres (verde).
+  fill(0, 143, 57);
   
   // Se determina la acción que activa el cambio.
-  
-  if (mousePressed == true) {
-    set(0, 0, ImgColor);
-  } else {
+  int s = second();
+  if (s % 2 == 0) {
     asciify();
+  } else {
+    set(0, 0, ImgColor);    
   }
 }
 
