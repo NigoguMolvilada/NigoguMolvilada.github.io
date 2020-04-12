@@ -21,7 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://nigogumolvilada.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Nigogu, Molvilada
 github_username: Nigogu, Molvilada
-logo: "./favicon.ico"
+logo: "./favicon.png"
 
 read_time: true
 words_per_minute: 125
