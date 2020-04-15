@@ -82,8 +82,6 @@ void asciify() {
     }
   }
 }
-
-
 ```
 
 Modificando algunos de los parámetros, como los caracteres utilizados y su tamaño, el color del fondo, o incluso la acción que provoca el cambio, se pueden obtener diversos resultados. A continuación se muestra uno de ellos.
