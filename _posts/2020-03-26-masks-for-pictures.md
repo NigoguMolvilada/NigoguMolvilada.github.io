@@ -25,7 +25,6 @@ Para ver cada filtro toca hacer clic en el scketch y oprimir alguna de estas tec
 El código en processing es el siguiente:
 
 ```java
-
 PImage img;
 PGraphics original;
 PGraphics mask;
@@ -34,7 +33,7 @@ boolean inv = false;
 
 float[][] matrix = { { 0, 0, 0 },
                      { 0, 1, 0 },
-                     { 0, 0, 0 } }; 
+                     { 0, 0, 0 } };
 
 void setup() {
   size(844, 422);
@@ -49,7 +48,7 @@ void draw() {
   original.image(img,0,0);
   original.endDraw();
   mask.beginDraw();
-  mask.image(img,0,0); 
+  mask.image(img,0,0);
   mask.loadPixels();
   for (int y = 0; y < mask.height; y++) {
     for (int x = 0; x < mask.width; x++ ) {
@@ -70,7 +69,7 @@ void keyPressed(){
   if(key == 'a'){
     matrix = { { -1, -1, -1 },
                { -1,  8, -1 },
-               { -1, -1, -1 } }; 
+               { -1, -1, -1 } };
   }else if(key == 'b'){
     matrix = { { -1, 0,  1 },
                { -2, 0,  2 },
