@@ -18,8 +18,6 @@ Para ver cada filtro toca hacer clic en el scketch y oprimir alguna de estas tec
 - **g, h, i, j** para ver las máscaras de [Operadores Sobel](https://en.wikipedia.org/wiki/Sobel_operator) (abajo, izquierda, derecha y arriba, respectivamente).
 - **k** para invertir los colores de la imagen. Se puede usar en simultáneo con otros filtros.
 
-<script src="processing.js"></script>
-
 <canvas data-processing-sources="/sketches/masks_implementation/masks_implementation.pde"></canvas>
 
 El código en processing es el siguiente:
@@ -37,7 +35,7 @@ float[][] matrix = { { 0, 0, 0 },
 
 void setup() {
   size(844, 422);
-  img = loadImage("/sketches/masks_implementation/lena.jpg"); 
+  img = loadImage("/sketches/masks_implementation/lena.jpg");
   original = createGraphics(422, 422);
   mask = createGraphics(422, 422);
   noStroke();
