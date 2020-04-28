@@ -93,6 +93,13 @@ void keyPressed(){
   }else if (key == 'k') {
     inv = !inv;
   }
+  // Normal
+  else if (key == 'l') {
+    matrix = { { 0, 0, 0 },
+               { 0, 1, 0 },
+               { 0, 0, 0 } }; 
+    inv = false;
+  }
 }
 
 color convolution(int x, int y, float[][] matrix, int matrixsize, PGraphics mask){

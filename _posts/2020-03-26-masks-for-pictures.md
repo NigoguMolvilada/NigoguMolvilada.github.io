@@ -17,6 +17,7 @@ Para ver cada filtro toca hacer clic en el scketch y oprimir alguna de estas tec
 - **f** para ver la máscara de relieve.
 - **g, h, i, j** para ver las máscaras de [Operadores Sobel](https://en.wikipedia.org/wiki/Sobel_operator) (abajo, izquierda, derecha y arriba, respectivamente).
 - **k** para invertir los colores de la imagen. Se puede usar en simultáneo con otros filtros.
+- **l** para volver a la imagen original.
 
 <canvas data-processing-sources="/sketches/masks_implementation/masks_implementation.pde"></canvas>
 
@@ -117,6 +118,13 @@ void keyPressed(){
               {-1, -2, -1 } };
   }else if (key == 'k') {
     inv = !inv;
+  }
+  // Normal
+  else if (key == 'l') {
+    matrix = { { 0, 0, 0 },
+               { 0, 1, 0 },
+               { 0, 0, 0 } };
+    inv = false;
   }
 }
 
