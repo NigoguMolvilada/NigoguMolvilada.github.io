@@ -9,11 +9,11 @@ En este post se hace una documentación del estudio realizado para convertir una
 
 El primer método, que es el que parece a simple vista, es convertir la imagen a escala de grises sacando el promedio de los valores RGB.
 
-El segundo método es utilizando la variable luma. Para eso primero toca pasar de RGB a HSB (Hue, Saturation, y Brightness). Aquí el valor de Brightness se remplaza por el valor de luma, que es un valor de luminosidad sacado con los valores RGB, por medio de la siguiente ecuación:
+El segundo método es utilizando la variable luma. Para eso se utiliza la siguiente ecuación:
 
 $$\displaystyle Y'_{\text{601}}=0.299R+0.587G+0.114B$$
 
-Para ver la conversión con luma oprimir cualquier tecla. Al oprimir otra tecla vuelve al promedio RGB (por cada tecla oprimida se van alternando entre promedio RGB y lumia).
+Para ver la conversión con luma oprimir cualquier tecla. Al oprimir otra tecla vuelve al promedio RGB (por cada tecla oprimida se van alternando entre promedio RGB y luma).
 
 <canvas data-processing-sources="/sketches/grayscale/grayscale.pde"></canvas>
 
@@ -53,21 +53,12 @@ void draw() {
   image(grayscale, 422, 0);
 }
 
-
 void keyPressed(){
   if (grayscaleType == "RGB") {
     grayscaleType = "luma";
   } else {
     grayscaleType = "RGB";
   }
-}
-
-color HSBtoRGB(color pixel){
-  colorMode(HSB);
-  float phue = hue(pixel);
-  float psaturation = saturation(pixel);
-  float pluma = red(pixel)*0.2989 + green(pixel)*0.5870 + blue(pixel)*0.1140;
-  return color(phue, psaturation, pluma);
 }
 
 color conversion(int x, int y, String grayscaleType){
@@ -84,14 +75,12 @@ color conversion(int x, int y, String grayscaleType){
       gray = (int)(pred + pgreen + pblue)/3;
       break;
     case "luma":
-      color newColor = HSBtoRGB(pixel);
-      pred = red(newColor);
-      pgreen = green(newColor);
-      pblue = blue(newColor);
-      gray = (int)(pred + pgreen + pblue)/3;
+      pred = red(pixel);
+      pgreen = green(pixel);
+      pblue = blue(pixel);
+      gray = (int) (0.2989*pred + 0.5870*pgreen + 0.1140*pblue);
       break;
   }
-  colorMode(RGB);
   return color(gray, gray, gray);
 }
 

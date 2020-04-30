@@ -40,16 +40,6 @@ void keyPressed(){
   }
 }
 
-color HSBtoRGB(color pixel){
-  colorMode(HSB);
-  float phue = hue(pixel);
-  float psaturation = saturation(pixel);
-  float pluma = red(pixel)*0.2989 + green(pixel)*0.5870 + blue(pixel)*0.1140;
-  //float pluma = red(pixel)*0.2126 + green(pixel)*0.7152 + blue(pixel)*0.0722;
-  // float pluma = brightness(pixel);
-  return color(phue, psaturation, pluma);
-}
-
 color conversion(int x, int y, String grayscaleType){
   int gray = 0;
   color pixel = get(x,y);  
@@ -64,14 +54,11 @@ color conversion(int x, int y, String grayscaleType){
       gray = (int)(pred + pgreen + pblue)/3; 
       break;
     case "luma": 
-      color newColor = HSBtoRGB(pixel);   
-      // return newColor;
-      pred = red(newColor);
-      pgreen = green(newColor);
-      pblue = blue(newColor);    
-      gray = (int)(pred + pgreen + pblue)/3;
+      pred = red(pixel);
+      pgreen = green(pixel);
+      pblue = blue(pixel);    
+      gray = (int) (0.2989*pred + 0.5870*pgreen + 0.1140*pblue);
       break;
   }
-  colorMode(RGB);
   return color(gray, gray, gray);
 }
