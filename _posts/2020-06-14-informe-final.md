@@ -40,7 +40,7 @@ Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en
 
 #### 3.2 Aplicación de algunas máscaras de convolución
 
-<p style='text-align: justify;'>Esta práctica se hizo teniendo en cuenta la lectura recomendada sobre el procesamiento de imágenes por medio de kernels o también llamadas matrices de convolución [Kernel (image processing)](https://en.wikipedia.org/wiki/Kernel_(image_processing))
+<p style='text-align: justify;'>Esta práctica se hizo teniendo en cuenta la lectura recomendada sobre el procesamiento de imágenes por medio de kernels o también llamadas matrices de convolución https://en.wikipedia.org/wiki/Kernel_(image_processing)
 Se realizaron 6 operaciones básicas, detección de bordes, difuminado, realzado, afilado, sobel y negativo.
 El proceso básico es coger un píxel y los pixeles que lo rodean, multiplicar valor por valor el color de cada píxel por la matriz de convolución, y sumarlos. El resultado de esa operación será el nuevo color del píxel de la mitad. Hay que tener en cuenta que, si alguna operación supera el valor de 255, se tomará el 255, de igual manera si es menor a 0, se tomará el 0.</p>
 
@@ -75,3 +75,9 @@ Todo el proceso descrito anteriormente fue el implementando en Processing, proba
 Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en este caso la imagen se va actualizando, dependiendo del frame del video.</p>
 
 #### 3.3 Conversión a ASCII
+
+#### 3.4 Histograma para imágenes
+
+#### 3.5 Eficiencia computacional
+
+### 4. Conclusiones
