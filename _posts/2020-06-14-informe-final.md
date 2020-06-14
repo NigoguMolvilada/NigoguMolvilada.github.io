@@ -36,7 +36,9 @@ $$\displaystyle UHDTVHDR = 0.2627*R + 0.6780*G + 0.0593*B $$
 
 <p style='text-align: justify;'>Al hacer una comparación entre todas las ecuaciones y ver los resultados se observó que cada uno se enfoca en algo distinto, luma en iluminación, HSL mejor el brillo, etc.
 Al hacerlo por medio de hardware lo que se hizo fue mandar el valor de los pesos en las ecuaciones y una bandera para saber que tipo de ecuación eso (basado por pesos, HSV o HLS).
-Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en este caso la imagen se va actualizando, dependiendo del frame del video.</p>
+Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en este caso la imagen se va actualizando, dependiendo del frame del video.
+</p>
+Los resultados pueden ser vistos en [Conversión a escala de grises]({{ site.baseurl }}{% link _posts/2020-04-27-grayscale.md %})
 
 #### 3.2 Aplicación de algunas máscaras de convolución
 
@@ -73,11 +75,18 @@ $$\displaystyle B = 0*-1+255*-1+0*-1+255*-1+0*8+0*-1+255*-1+255*-1+0*-1 = -1020 
 <p style='text-align: justify;'>En este ejemplo con una matriz de convolución para detección de bordes, al hacer las operaciones conserva el mismo color (255,0,0).
 Todo el proceso descrito anteriormente fue el implementando en Processing, probando con varias matrices de convolución. Para hacerlo por hardware se hace lo mismo, pero la matriz de convolución a tratar es mandada desde Processing. Para este caso solo se implementaron matrices de convolución de 3x3.
 Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en este caso la imagen se va actualizando, dependiendo del frame del video.</p>
+Los resultados pueden ser vistos en [Máscaras de convolución]({{ site.baseurl }}{% link _posts/2020-03-26-masks-for-pictures.md %})
 
 #### 3.3 Conversión a ASCII
+
+<p style='text-align: justify;'> Lo que se hizo aquí convertir la imagen a escala de grises y luego mirar la luminancia de cada píxel y dependiendo de ello poner el carácter respectivo. La idea no es analizar píxel por píxel y poner un carácter, ya que no se notaría, por lo tanto, se determinó un valor, en este caso 5, para analizar cada 5 pixeles. Los caractéres utilizados fueron <strong>@%#*+=-:. </strong> . Están del más denso @, al menos denso, el espacio en blanco.
+Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en este caso la imagen se va actualizando, dependiendo del frame del video.
+</p>
+
+Los resultados pueden ser vistos en [Imágenes a ASCII]({{ site.baseurl }}{% link _posts/2020-03-17-image-to-ascii.md %})
 
 #### 3.4 Histograma para imágenes
 
 #### 3.5 Eficiencia computacional
 
-### 4. Conclusiones
+### 4 Conclusiones

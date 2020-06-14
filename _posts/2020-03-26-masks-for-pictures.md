@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Diferentes máscaras para aplicar en una imagen"
+title: "Máscaras de convolución"
 date: 2020-03-26 10:26:00 -0500
 permalink: /masks-for-pictures
 ---

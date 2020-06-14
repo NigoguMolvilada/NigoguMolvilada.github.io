@@ -5,7 +5,7 @@ String grayscaleType = "RGB"; //Valor inicial
 
 void setup() {
   size(844, 310);
-  img = loadImage("/sketches/grayscale/fire.jpg"); 
+  img = loadImage("/sketches/grayscale_img/fire.jpg"); 
   original = createGraphics(422, 310);
   grayscale = createGraphics(422, 310);
   noStroke();
@@ -13,10 +13,10 @@ void setup() {
 
 void draw() {
   original.beginDraw();
-  original.image(img,0,0);
+  original.image(img, 0, 0);
   original.endDraw();
   grayscale.beginDraw();
-  grayscale.image(img,0,0); 
+  grayscale.image(img, 0, 0); 
   grayscale.loadPixels();
   for (int y = 0; y < grayscale.height; y++) {
     for (int x = 0; x < grayscale.width; x++ ) {
@@ -37,15 +37,15 @@ void keyPressed(){
   }else if (key == 'b'){ //Y601
     grayscaleType = "luma";
   } else if (key == 'c'){ //Hexcone
-    grayscaleType = "HSV"
+    grayscaleType = "HSV";
   } else if (key == 'd'){ //Bi-hexcone
-    grayscaleType = "HSL" 
+    grayscaleType = "HSL"; 
   } else if (key == 'e'){ //Y240
-    grayscaleType = "Adobe"
+    grayscaleType = "Adobe";
   } else if (key == 'f'){ //Y709
-    grayscaleType = "HDTV"
+    grayscaleType = "HDTV";
   } else if (key == 'g'){ //Y2020
-    grayscaleType = "UHDTVHDR"
+    grayscaleType = "UHDTVHDR";
   }
 }
 
@@ -63,7 +63,7 @@ color conversion(int x, int y, String grayscaleType){
       gray = (int) (0.2989*pred + 0.5870*pgreen + 0.1140*pblue);
       break;
     case "HSV":
-      gray = max(pred, pgreen, pblue);
+      gray = (int) max(pred, pgreen, pblue);
       break;
     case "HSL":
       gray = (int) (max(pred, pgreen, pblue) + min(pred, pgreen, pblue))/2;

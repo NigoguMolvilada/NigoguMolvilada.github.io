@@ -23,7 +23,7 @@ Adicionalmente, se utilizaron dos métodos más, empleando los modelos HSV y HSL
 
 A continuación se puede observar el resultado obtenido.
 
-<canvas data-processing-sources="/sketches/grayscale/grayscale.pde"></canvas>
+<canvas data-processing-sources="/sketches/grayscale_img/grayscale.pde"></canvas>
 
 - **a** para ver la conversión con promedio aritmético de valores RGB.
 - **b** para ver la conversión utilizando la variable luma (Y601).
@@ -49,10 +49,10 @@ void setup() {
 
 void draw() {
   original.beginDraw();
-  original.image(img,0,0);
+  original.image(img, 0, 0);
   original.endDraw();
   grayscale.beginDraw();
-  grayscale.image(img,0,0);
+  grayscale.image(img, 0, 0);
   grayscale.loadPixels();
   for (int y = 0; y < grayscale.height; y++) {
     for (int x = 0; x < grayscale.width; x++ ) {
@@ -73,15 +73,15 @@ void keyPressed(){
   }else if (key == 'b'){ //Y601
     grayscaleType = "luma";
   } else if (key == 'c'){ //Hexcone
-    grayscaleType = "HSV"
+    grayscaleType = "HSV";
   } else if (key == 'd'){ //Bi-hexcone
-    grayscaleType = "HSL"
+    grayscaleType = "HSL";
   } else if (key == 'e'){ //Y240
-    grayscaleType = "Adobe"
+    grayscaleType = "Adobe";
   } else if (key == 'f'){ //Y709
-    grayscaleType = "HDTV"
+    grayscaleType = "HDTV";
   } else if (key == 'g'){ //Y2020
-    grayscaleType = "UHDTVHDR"
+    grayscaleType = "UHDTVHDR";
   }
 }
 
@@ -99,7 +99,7 @@ color conversion(int x, int y, String grayscaleType){
       gray = (int) (0.2989*pred + 0.5870*pgreen + 0.1140*pblue);
       break;
     case "HSV":
-      gray = max(pred, pgreen, pblue);
+      gray = (int) max(pred, pgreen, pblue);
       break;
     case "HSL":
       gray = (int) (max(pred, pgreen, pblue) + min(pred, pgreen, pblue))/2;
