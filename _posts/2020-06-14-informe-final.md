@@ -89,4 +89,6 @@ Los resultados pueden ser vistos en [Imágenes a ASCII]({{ site.baseurl }}{% lin
 
 #### 3.5 Eficiencia computacional
 
+A cada vídeo se le hizo un análisis de eficiencia computacional, es decir los FPS (frames per second). Algo evidente fue que en algunos casos se podía observar como la eficiencia del procesamiento de videos por hardware es mucho mejor que la del procesamiento por software.
+
 ### 4 Conclusiones
