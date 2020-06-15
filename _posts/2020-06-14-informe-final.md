@@ -91,4 +91,10 @@ Los resultados pueden ser vistos en [Imágenes a ASCII]({{ site.baseurl }}{% lin
 
 A cada vídeo se le hizo un análisis de eficiencia computacional, es decir los FPS (frames per second). Algo evidente fue que en algunos casos se podía observar como la eficiencia del procesamiento de videos por hardware es mucho mejor que la del procesamiento por software.
 
+Este es un ejemplo con máscaras de convolución
+
+<video autoplay  controls>
+  <source src="/videos/grayscale_vid.mp4" type="video/mp4">
+</video>
+
 ### 4 Conclusiones
