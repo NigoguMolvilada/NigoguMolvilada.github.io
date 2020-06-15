@@ -3,6 +3,7 @@ layout: post
 title: "Informe talleres procesamiento de imágenes"
 date: 2020-06-14 16:13:00 -0500
 permalink: /static-page
+video: true
 ---
 
 ### 1 Motivación y objetivo
@@ -93,8 +94,18 @@ A cada vídeo se le hizo un análisis de eficiencia computacional, es decir los 
 
 Este es un ejemplo con máscaras de convolución
 
-<video autoplay  controls>
-  <source src="/videos/grayscale_vid.mp4" type="video/mp4">
+Por software
+<video width="1280" height="360" autoplay="autoplay" controls="controls" name="media">
+
+<source src="/videos/shaders_video.webm" type="video/webm">
+<source src="/videos/shaders_video.mp4" type="video/mp4">
+</video>
+
+Por hardware
+<video width="1280" height="360" autoplay="autoplay" controls="controls" name="media">
+
+<source src="/videos/shaders_video_h.webm" type="video/webm">
+<source src="/videos/shaders_video_h.mp4" type="video/mp4">
 </video>
 
 ### 4 Conclusiones
