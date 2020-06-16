@@ -138,3 +138,6 @@ Por hardware
 </video>
 
 ### 4. Conclusiones
+
+{: style="text-align: justify" }
+Después de hacer cada taller por hardware (Processing + OpenGL) y software (Processing), es evidente que es más eficiente computacionalmente hacerlo por hardware, a pesar de que es mucho más sencillo implementarlo por software.
