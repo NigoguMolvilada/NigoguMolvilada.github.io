@@ -1,6 +1,9 @@
+/* @pjs preload="/sketches/histogram/Wimbledon.jpg,/sketches/histogram/Australia.jpg,/sketches/histogram/OldWimbledon.jpg,/sketches/histogram/RolandGarros.jpg,/sketches/histogram/USOpen.jpg"; */
+
 PImage img;
 PGraphics original;
 PGraphics mask;
+
 int[] hist;
 int[] histR;
 int[] histG;
@@ -32,8 +35,8 @@ void draw() {
   if(Bhist){
     mask.stroke(0,0,0,255);
     for (int i = 0; i < img.width; i += 2) {
-      int which = int(map(i, 0, img.width, 0, 255));
-      int y = int(map(hist[which], 0, histMax, img.height, 0));
+      int which = (int) (map(i, 0, img.width, 0, 255));
+      int y = (int) (map(hist[which], 0, histMax, img.height, 0));
       mask.line(i, img.height, i, y);
     }
   }
@@ -41,8 +44,8 @@ void draw() {
   if(BhistR){
     mask.stroke(255,0,0,100);
     for (int i = 0; i < img.width; i += 2) {
-      int which = int(map(i, 0, img.width, 0, 255));
-      int y = int(map(histR[which], 0, histRMax, img.height, 0));
+      int which = (int) (map(i, 0, img.width, 0, 255));
+      int y = (int) (map(histR[which], 0, histRMax, img.height, 0));
       mask.line(i, img.height, i, y);
     }
   }
@@ -50,8 +53,8 @@ void draw() {
   if(BhistG){
     mask.stroke(0,255,0,100);
     for (int i = 0; i < img.width; i += 2) {
-      int which = int(map(i, 0, img.width, 0, 255));
-      int y = int(map(histG[which], 0, histGMax, img.height, 0));
+      int which = (int) (map(i, 0, img.width, 0, 255));
+      int y = (int) (map(histG[which], 0, histGMax, img.height, 0));
       mask.line(i, img.height, i, y);
     }
   }
@@ -59,8 +62,8 @@ void draw() {
   if(BhistB){
     mask.stroke(0,0,255,100);
     for (int i = 0; i < img.width; i += 2) {
-      int which = int(map(i, 0, img.width, 0, 255));
-      int y = int(map(histB[which], 0, histBMax, img.height, 0));
+      int which = (int) (map(i, 0, img.width, 0, 255));
+      int y = (int) (map(histB[which], 0, histBMax, img.height, 0));
       mask.line(i, img.height, i, y);
     }
   }
