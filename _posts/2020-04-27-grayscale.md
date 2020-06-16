@@ -7,6 +7,11 @@ permalink: /grayscale
 
 En este post se hace una documentación del estudio realizado para convertir una imagen a escala de grises por medio de diferntes métodos, utilizando [Processing](https://processing.org/).
 
+<script src="processing.js"></script>
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 El primer método, y más intuitivo, es convertir la imagen a escala de grises sacando el promedio aritmético de los valores RGB.
 
 $$\displaystyle G=\frac{R+G+B}{3}$$

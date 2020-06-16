@@ -7,6 +7,8 @@ permalink: image-to-ascii
 
 En este post se hace una documentación del estudio realizado para convertir una imagen a caracteres ASCII a través de [Processing](https://processing.org/).
 
+<script src="processing.js"></script>
+
 Al realizar una búsqueda en Google de "image to ASCII" nos encontramos con múltiples herramientas automáticas que con un click hacían lo que queríamos, sin embargo, es de nuestro interés investigar cómo se hace este proceso y no solo convertir una imagen a caracteres. Para realizar la actividad se utilizó Processing.
 
 Se puede cambiar el color del fondo y caracteres con las siguientes teclas:
