@@ -131,12 +131,14 @@ A continuación se puede observar un ejemplo con máscaras de convolución.
 
 Por software:
 <video width="100%" height="auto" controls name="media">
+
 <source src="/videos/shaders_video.webm" type="video/webm">
 <source src="/videos/shaders_video.mp4" type="video/mp4">
 </video>
 
 Por hardware:
 <video width="100%" height="auto" controls name="media">
+
 <source src="/videos/shaders_video_h.webm" type="video/webm">
 <source src="/videos/shaders_video_h.mp4" type="video/mp4">
 </video>
@@ -144,4 +146,4 @@ Por hardware:
 ### 4. Conclusiones
 
 {: style="text-align: justify" }
-Después de hacer cada taller por hardware (Processing + OpenGL) y software (Processing), es evidente que es más eficiente computacionalmente hacerlo por hardware, a pesar de que es mucho más sencillo implementarlo por software.
+Processing es un lenguaje relativamente desconocido basado en Java enfocado en lo visual que permite realizar proyectos multimedia de diversos tipos y realizar su procesamiento a través de software o hardware (utilizando shaders). Después de hacer cada taller por hardware (Processing + OpenGL) y software (Processing), es evidente que es más eficiente computacionalmente hacerlo por hardware, a pesar de que es mucho más sencillo implementarlo por software.
