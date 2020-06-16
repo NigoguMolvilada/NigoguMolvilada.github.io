@@ -7,6 +7,8 @@ permalink: /masks-for-pictures
 
 En este post se hace una documentación del estudio realizado para aplicarle diferentes máscaras a una imagen haciendo un análisis de sus pixeles utilizando [Processing](https://processing.org/).
 
+<script src="processing.js"></script>
+
 Al realizar una búsqueda sobre "procesamiento de imagenes con kernel" encontramos que lo que se hacía era una convolución con una matriz (el núcleo o kernel) con una cantidad de pixeles de una imagen. Cada kernel da como resultado una máscara diferente. En este ejercicio se decidió implementar los kernel más famosos y la función de inverso vista en clase. Para realizar la actividad se utilizó Processing y el resultado final obtenido es el siguiente:
 
 Para ver cada filtro toca hacer clic en el scketch y oprimir alguna de estas teclas:
