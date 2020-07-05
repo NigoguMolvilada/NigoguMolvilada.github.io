@@ -8,6 +8,10 @@ permalink: /informe-final
 {: style="text-align: justify" }
 El presente post es el informe final de los talleres de procesamiento de imágenes realizados para la asignatura Computación Visual por [los autores de este blog]({{site.baseurl}}/about/).
 
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 ### 1. Motivación y objetivo
 
 {: style="text-align: justify" }
@@ -49,7 +53,7 @@ Al hacer una comparación entre todas las ecuaciones y ver los resultados se obs
 Al hacerlo por medio de hardware lo que se hizo fue mandar el valor de los pesos en las ecuaciones y una bandera para saber que tipo de ecuación eso (basado por pesos, HSV o HLS). Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en este caso la imagen se va actualizando, dependiendo del frame del video.
 
 {: style="text-align: justify" }
-Los resultados pueden ser vistos en [Conversión a escala de grises](site.baseurl/grayscale/).
+Los resultados pueden ser vistos en [Conversión a escala de grises](grayscale/).
 
 #### 3.2. Aplicación de algunas máscaras de convolución
 
@@ -95,7 +99,7 @@ En este ejemplo con una matriz de convolución para detección de bordes, al hac
 Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en este caso la imagen se va actualizando, dependiendo del frame del video.
 
 {: style="text-align: justify" }
-Los resultados pueden ser vistos en [Máscaras de convolución]({{site.baseurl}}/masks-for-pictures/).
+Los resultados pueden ser vistos en [Máscaras de convolución](masks-for-pictures/).
 
 #### 3.3. Conversión a ASCII
 
@@ -106,7 +110,7 @@ Lo que se hizo aquí convertir la imagen a escala de grises y luego mirar la lum
 Para el procesamiento de video se hizo lo mismo que en el de imagen, solo que en este caso la imagen se va actualizando, dependiendo del frame del video.
 
 {: style="text-align: justify" }
-Los resultados pueden ser vistos en [Imágenes a ASCII]({{site.baseurl}}/image-to-ascii/).
+Los resultados pueden ser vistos en [Imágenes a ASCII](image-to-ascii/).
 
 #### 3.4. Histograma para imágenes
 
@@ -116,6 +120,8 @@ Para realizar esta práctica se hizo una investigación sobre qué es un histogr
 {: style="text-align: justify" }
 El código realizado itera por todos los pixeles de la imagen y guarda sus propiedades en arreglos de 256 posiciones. Cada elemento de estos arreglos indica cuántos pixeles tienen el nivel de brillo, rojo, verde o azul igual al valor de la posición del arreglo en la que se encuentran (e.g. si el arreglo que almacena los niveles de azul en la posición 50 tiene un valor de 3.000, significa que 3.000 pixeles de la imagen tienen un valor de 50 en este canal de color). Cada valor de los arreglos de cada histograma se grafica a través del método .line(). El usuario puede habilitar o deshabilitar los histogramas que deseé a través de la entrada de teclado y también cambiar la imagen analizada.
 
+Los resultados pueden ser vistos en [Histogramas en Processing](histograms/).
+
 #### 3.5. Eficiencia computacional
 
 {: style="text-align: justify" }
@@ -123,14 +129,14 @@ A cada vídeo se le hizo un análisis de eficiencia computacional, es decir los 
 
 A continuación se puede observar un ejemplo con máscaras de convolución.
 
-Por software
+Por software:
 <video width="100%" height="auto" controls name="media">
 
 <source src="/videos/shaders_video.webm" type="video/webm">
 <source src="/videos/shaders_video.mp4" type="video/mp4">
 </video>
 
-Por hardware
+Por hardware:
 <video width="100%" height="auto" controls name="media">
 
 <source src="/videos/shaders_video_h.webm" type="video/webm">
@@ -138,3 +144,6 @@ Por hardware
 </video>
 
 ### 4. Conclusiones
+
+{: style="text-align: justify" }
+Processing es un lenguaje relativamente desconocido basado en Java enfocado en lo visual que permite realizar proyectos multimedia de diversos tipos y realizar su procesamiento a través de software o hardware (utilizando shaders). Después de hacer cada taller por hardware (Processing + OpenGL) y software (Processing), es evidente que es más eficiente computacionalmente hacerlo por hardware, a pesar de que es mucho más sencillo implementarlo por software. Podemos concluir también que existen librerías como Processing.js (descontinuada) y P5.js que permiten adaptar código de Processing para su publicación en la web.
