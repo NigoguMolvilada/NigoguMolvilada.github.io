@@ -1,0 +1,106 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#tooltip {
+    vertical-align: middle;
+    position: absolute;
+    color: rgb(86, 86, 86);
+    font-size: 16px;
+    border-radius: 2px;
+    background-clip: padding-box;
+    min-width: 62px;
+    left: 0%;
+    bottom: 0%;
+    margin: 10px;
+    padding: 0px 17px;
+    text-align: start;
+    display: none;
+}
+
+.nicebox {
+    position: absolute;
+    text-align: center;
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 13px;
+    z-index: 5;
+    box-shadow: 0 4px 6px -4px #333;
+    padding: 5px 10px;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    border: rgb(229, 229, 229) 1px solid;
+}
+
+#controls {
+    top: 0px;
+    right: 50%;
+    width: 360px;
+    height: 45px;
+    margin: 10px;
+}
+
+#movilidad {
+    width: 360px;
+    height: 20px;
+}
+
+#legend {
+    display: flex;
+    display: -webkit-box;
+    padding-top: 7px;
+}
+
+.color-key {
+    background: linear-gradient(to right,
+            hsl(5, 69%, 54%) 0%,
+            hsl(29, 71%, 51%) 17%,
+            hsl(54, 74%, 47%) 33%,
+            hsl(78, 76%, 44%) 50%,
+            hsl(102, 78%, 41%) 67%,
+            hsl(127, 81%, 37%) 83%,
+            hsl(151, 83%, 34%) 100%);
+    flex: 1;
+    -webkit-box-flex: 1;
+    margin: 0 5px;
+    text-align: left;
+    font-size: 1.0em;
+    line-height: 1.0em;
+}
+
+#data-value {
+    font-size: 2.0em;
+    font-weight: bold
+}
+
+#data-label {
+    font-size: 2.0em;
+    font-weight: normal;
+    padding-right: 10px;
+}
+
+#data-label:after {
+    content: ':'
+}
+
+#data-caret {
+    margin-left: -5.5px;
+    display: none;
+    font-size: 14px;
+    width: 14px
+}
+
+label {
+    font-weight: 400;
+}
