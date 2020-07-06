@@ -11,7 +11,7 @@ async function initMap() {
     center: bogota,
   });
 
-  await d3.json("/datos/UTAM.json").then((data) => {
+  await d3.json("/googleMaps/datos/UTAM.json").then((data) => {
     const UTAMValues = data;
 
     map.data.addGeoJson(UTAMValues, {
@@ -105,7 +105,7 @@ function styleFeature(feature) {
 function auxData(requestedStat) {
   $.ajax({
     type: "GET",
-    url: "./datos/Ecomovilidad.csv",
+    url: "/googleMaps/datos/Ecomovilidad.csv",
     dataType: "text",
     success: function (data) {
       processData(data, requestedStat);
