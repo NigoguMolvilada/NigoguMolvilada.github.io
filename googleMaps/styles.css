@@ -46,13 +46,14 @@ body {
 #controls {
     top: 0px;
     right: 50%;
-    width: 360px;
-    height: 45px;
+    width: 400px;
+    height: 50px;
     margin: 10px;
 }
 
-#movilidad {
-    width: 360px;
+#movilidad, #fecha {
+    display: inline-block;
+    width: 45%;
     height: 20px;
 }
 

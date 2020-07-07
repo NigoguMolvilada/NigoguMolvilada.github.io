@@ -1,10 +1,18 @@
 var map;
 var minVal;
 var maxVal;
+var reportSelected = "Eco";
+var date = "2";
 
-const dict = { Eco2: 1, Eco3: 2, Eco4: 3, Eco5: 4, Eco6: 5, Eco7: 6 };
+const files = {
+  Eco: "/googleMaps/datos/Ecomovilidad.csv",
+  SITP: "/googleMaps/datos/SITP.csv",
+  Transmilenio: "/googleMaps/datos/Transmilenio.csv",
+  Particulares: "/googleMaps/datos/Privado.csv",
+};
+const dict = { "2": 1, "3": 2, "4": 3, "5": 4, "6": 5, "7": 6 };
 
-async function initMap() {
+window.initMap = async function () {
   let bogota = { lat: 4.570868, lng: -74 };
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 10,
@@ -18,40 +26,27 @@ async function initMap() {
       idPropertyName: "UTAM",
     });
   });
+
   map.data.setStyle(styleFeature);
   map.data.addListener("mouseover", mouseInToRegion);
   map.data.addListener("mouseout", mouseOutOfRegion);
 
-  auxData("Eco2");
+  auxData();
 
   var selectBox = document.getElementById("movilidad");
   google.maps.event.addDomListener(selectBox, "change", function () {
+    reportSelected = selectBox.options[selectBox.selectedIndex].value;
     clearCensusData();
-    console.log(selectBox.options[selectBox.selectedIndex].value);
-    auxData(selectBox.options[selectBox.selectedIndex].value);
+    auxData();
   });
 
-  let actualUTAMInfo = "";
-  let pInfo = document.createElement("p");
-  let tooltip = document.getElementById("tooltip");
-
-  map.data.addListener("mouseover", function (event) {
-    event.feature.setProperty("isColorful", true);
-    actualUTAMInfo +=
-      "<strong>UTAM Nombre: </strong>" + event.feature.j.UTAMNombre + "<br>";
-    actualUTAMInfo +=
-      "<strong>UTAM Localidad: </strong>" + event.feature.j.LOCNombre + "<br>";
-    actualUTAMInfo +=
-      "<strong>UTAM Municipio: </strong>" + event.feature.j.MUNNombre;
-    pInfo.innerHTML = actualUTAMInfo;
-    tooltip.appendChild(pInfo);
+  var selectBox2 = document.getElementById("fecha");
+  google.maps.event.addDomListener(selectBox2, "change", function () {
+    date = selectBox2.options[selectBox2.selectedIndex].value;
+    clearCensusData();
+    auxData();
   });
-
-  map.data.addListener("mouseout", function (event) {
-    event.feature.setProperty("isColorful", false);
-    actualUTAMInfo = "";
-  });
-}
+};
 
 function clearCensusData() {
   minVal = Number.MAX_VALUE;
@@ -102,23 +97,23 @@ function styleFeature(feature) {
   };
 }
 
-function auxData(requestedStat) {
+function auxData() {
   $.ajax({
     type: "GET",
-    url: "/googleMaps/datos/Ecomovilidad.csv",
+    url: files[reportSelected],
     dataType: "text",
     success: function (data) {
-      processData(data, requestedStat);
+      processData(data);
     },
   });
 }
 
-function processData(allText, requestedStat) {
+function processData(allText) {
   var allTextLines = allText.split(/\r\n|\n/);
   var headers = allTextLines[0].split(",");
   var loaded = {};
 
-  index = dict[requestedStat];
+  index = dict[date];
   minVal = 100;
   maxVal = 0;
 
@@ -142,17 +137,28 @@ function processData(allText, requestedStat) {
   document.getElementById("max").textContent = maxVal.toLocaleString();
 }
 
+let actualUTAMInfo = "";
+
 function mouseInToRegion(e) {
   e.feature.setProperty("state", "hover");
   var percent =
     ((e.feature.getProperty("bicycle_data") - minVal) / (maxVal - minVal)) *
     100;
 
+  // What was previously:
+  actualUTAMInfo = "";
+  actualUTAMInfo +=
+    "<strong>UTAM Nombre: </strong>" + e.feature.j.UTAMNombre + "<br>";
+  actualUTAMInfo +=
+    "<strong>UTAM Localidad: </strong>" + e.feature.j.LOCNombre + "<br>";
+  actualUTAMInfo += "<strong>UTAM Municipio: </strong>" + e.feature.j.MUNNombre;
+
   // update the label
   document.getElementById("data-label").textContent = "Porcentaje";
   document.getElementById("data-value").textContent = e.feature
     .getProperty("bicycle_data")
     .toLocaleString();
+  document.getElementById("utam-info").innerHTML = actualUTAMInfo;
   document.getElementById("tooltip").style.display = "block";
   document.getElementById("data-caret").style.display = "block";
   document.getElementById("data-caret").style.paddingLeft = percent + "%";
@@ -160,4 +166,5 @@ function mouseInToRegion(e) {
 
 function mouseOutOfRegion(e) {
   e.feature.setProperty("state", "normal");
+  actualUTAMInfo = "";
 }
