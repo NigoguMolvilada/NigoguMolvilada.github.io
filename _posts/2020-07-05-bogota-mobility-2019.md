@@ -31,16 +31,22 @@ Se recolectaron los datos y procesaron de acuerdo a las necesidades del proyecto
 
 Se puede visualizar el mapa con los datos aqui: [Ver mapa](/googleMaps/googleMaps.html)
 
+{: style="text-align: justify" }
 En la parte superior se puede encontrar un selector con los datos a visualizar. Por ejemplo "Ecomovilidad - Febrero", mostrará el porcentaje de viajes ecoamigables que se salieron desde cada UTAM en el mes de febrero.
 
 En la parte de abajo a la izquierda se encuentra un cuadro con los siguientes datos:
+{: style="text-align: justify" }
 
-- Porcentaje: Porcentaje de viajes que salieron de la UTAM seleccionada, en el mes seleccionado, con medio el medio de transporte seleccionado (Ecomovilidad, SITP, Transmilenio o Automóviles privados) con respecto al total de los viajes que salieron de esa misma UTAM. Si dice "Porcentaje: 80" y en el selector está seleccionado "Ecomovilidad - Febrero", significa que en esa UTAM, en el mes de Febrero, la cantidad de viajes ecoamigables que salieron de ahí fueron el 80% del total de todos los viajes (en cualquier medio de transporte) realizados en esa UTAM.
-
+- {: style="text-align: justify" }Porcentaje: Porcentaje de viajes que salieron de la UTAM seleccionada, en el mes seleccionado, con medio el medio de transporte seleccionado (Ecomovilidad, SITP, Transmilenio o Automóviles privados) con respecto al total de los viajes que salieron de esa misma UTAM. Si dice "Porcentaje: 80" y en el selector está seleccionado "Ecomovilidad - Febrero", significa que en esa UTAM, en el mes de Febrero, la cantidad de viajes ecoamigables que salieron de ahí fueron el 80% del total de todos los viajes (en cualquier medio de transporte) realizados en esa UTAM.
 - UTAM Nombre: nombre oficial de la UTAM. No confundir UTAM con barrio. Ejemplo: Chapinero
-
 - UTAM Localidad: la localidad en la que se encuentra ubicada la UTAM. Ejemplo: Kennedy
-
 - UTAM Municipio: el nombre del municipio donde está ubicada la UTAM. Ejemplo: Chía
 
 ### 5. Conclusiones
+
+{: style="text-align: justify" }
+A lo largo de implementación del proyecto y luego de analizar los datos visualizados, salen a la luz varias conclusiones:
+
+- {: style="text-align: justify" } La Ecomovilidad es un sector que está tomando fuerza en la ciudad de Bogotá. Por lo tanto la planificación de la movilidad en Bogotá debería centrarse más en beneficiar y darle más espacio a los transeúntes y ciclistas.
+- {: style="text-align: justify" } El uso de automóviles particulares sigue primando sobre el uso del transporte público. Esto podría explicar la excesiva congestión en el tránsito de la ciudad de Bogotá.
+- {: style="text-align: justify" } Para un mejor análisis hubiera sido bueno tener otros datos en cuenta, como los kilómetros recorridos por viaje, la traza, o edad de los encuestados. También utilizar otras caracterísiticas más entendibles que las ZAT y las UTAM, como lo son las localidades.
