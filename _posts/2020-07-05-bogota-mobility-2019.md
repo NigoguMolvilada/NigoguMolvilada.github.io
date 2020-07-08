@@ -17,6 +17,7 @@ El presente post es la bitácora del proyecto final de la asignatura Computació
 {: style="text-align: justify" }
 En la capital de Colombia y una de las ciudades más pobladas de Latinoamérica, Bogotá, el tema de la movilidad es algo que está en la boca de todo el mundo: tanto de expertos, como de los mismos ciudadanos que se preguntan el por qué la movilidad funciona tan mal. Muchos ciudadanos han optado por empezar a utilizar medios de transporte alternativos, como las bicicletas, y con el paso del tiempo parece ser una tendencia en aumento.
 
+{: style="text-align: justify" }
 En 2019, la Secretaría Distrital de Movilidad y el Centro Nacional de Consultoría encargó a Steer realizar una encuesta de movilidad para conocer cómo se movilizan los Bogotanos. Esta no es la primera encuesta de este tipo en la ciudad, ya que hay información sobre encuestas similares que datan de 2005, 2011 y 2015, pero si es la más reciente. Los resultados, además de ser interesantes, deberían poder ser visualizados de una forma fácil por personas ajenas al manejo de base de datos, de manera tal que den una idea de qué se debería hacer, y a qué tipo de movilidad se le debería apostar.
 
 ### 2. Objetivo
@@ -49,11 +50,11 @@ En la parte de abajo a la izquierda se encuentra un cuadro con los siguientes da
 
 - {: style="text-align: justify" }Porcentaje: Porcentaje de viajes que salieron de la UTAM seleccionada, en el mes seleccionado, con medio el medio de transporte seleccionado (Ecomovilidad, SITP, Transmilenio o automóviles privados) con respecto al total de los viajes que salieron de esa misma UTAM. Si dice "Porcentaje: 80" y en el selector está seleccionado "Ecomovilidad - Febrero", significa que en esa UTAM, en el mes de Febrero, la cantidad de viajes ecoamigables que salieron de ahí fueron el 80% del total de todos los viajes (en cualquier medio de transporte) realizados en esa UTAM.
 
-- UTAM Nombre: Nombre oficial de la UTAM. No confundir UTAM con barrio. Ejemplo: Chapinero.
+- {: style="text-align: justify" }UTAM Nombre: Nombre oficial de la UTAM. No confundir UTAM con barrio. Ejemplo: Chapinero.
 
-- UTAM Localidad: La localidad en la que se encuentra ubicada la UTAM. Ejemplo: Kennedy.
+- {: style="text-align: justify" }UTAM Localidad: La localidad en la que se encuentra ubicada la UTAM. Ejemplo: Kennedy.
 
-- UTAM Municipio: El nombre del municipio donde está ubicada la UTAM. Ejemplo: Chía.
+- {: style="text-align: justify" }UTAM Municipio: El nombre del municipio donde está ubicada la UTAM. Ejemplo: Chía.
 
 ### 5. Conclusiones
 
