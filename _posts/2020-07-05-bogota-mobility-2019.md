@@ -29,10 +29,13 @@ Utilizar los datos recolectados en la Encuesta de Movilidad de Bogotá 2019 para
 {: style="text-align: justify" }
 Se realizó la recolección de los datos y se procesaron de acuerdo a las necesidades del proyecto. Para la recolección se visitó el portal [Datos Abiertos](https://datosabiertos.bogota.gov.co/) que nos re-dirigió a [este link de SIMUR](http://www.simur.gov.co/portal-simur/datos-del-sector/encuestas-de-movilidad/) donde están los resultados históricos de las encuestas de movilidad públicas de los años 2005, 2011, 2015 y 2019.
 
+{: style="text-align: justify" }
 Inicialmente se contempló analizar los datos por localidad para visualizarlos de esta misma manera, pero se encontró que en los viajes hacía falta este dato, a pesar de que en los archivos informativos de la base de datos se indica que lo incluyen. Por esta razón, fue necesario elegir otra forma de fragmentar la ciudad y procesar los datos. Esto se hizo a través de las UTAM (Unidad Territorial de Análiss de Movilidad) y ZAT (Zonas de Análisis de Transporte), las cuales sí aparecen en la tabla de viajes de la base de datos.
 
+{: style="text-align: justify" }
 Como parte de los datos, se adjunta a ellos la zonificación: [Shapefiles](https://gisgeography.com/arcgis-shapefile-files-types-extensions/) con la delimitación de cada UTAM y ZAT, donde llaman la atención dos cosas: la primera es que el software en el que se realizan este tipo de archivos es de propietario (lo cual es cuestionable para una encuesta pública) y que al procesarlo para convertirlo a otro tipo de dato (GeoJSON, a través de [Map Shaper](https://mapshaper.org/)), se encuentra que hay algunos problemas en el establecimiento de fronteras entre las UTAMs y ZATs, lo que provoca que algunas pequeñas partes del mapa hagan parte de dos UTAM/ZAT, y otras de ninguna.
 
+{: style="text-align: justify" }
 Una vez convertidos, se filtraron y procesaron los datos y se utilizó la API de Google Maps para pintar las UTAM y sus respectivos datos procesados. Cabe mencionar que esta API recientemente cambió su modelo de negocio y ahora es necesario asociar un método de pago para utilizarla sin marca de agua (debido a que después de un número de solicitudes a la API, Google empieza a cobrar). Debido a esto y por cuestiones de seguridad, el release público de este proyecto (en el demo que se muestra a continuación) se hace con la marca de agua de desarrollo.
 
 ### 4. Demo
