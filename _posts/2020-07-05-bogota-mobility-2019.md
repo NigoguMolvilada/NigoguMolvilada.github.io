@@ -61,6 +61,7 @@ En la parte de abajo a la izquierda se encuentra un cuadro con los siguientes da
 {: style="text-align: justify" }
 A lo largo de implementación del proyecto y luego de analizar los datos visualizados, salen a la luz varias conclusiones:
 
-- {: style="text-align: justify" } La Ecomovilidad es un sector que está tomando fuerza en la ciudad de Bogotá. Por lo tanto la planificación de la movilidad en Bogotá debería centrarse más en beneficiar y darle más espacio a los transeúntes y ciclistas.
+- {: style="text-align: justify" } La Ecomovilidad es un sector que está tomando fuerza en la ciudad de Bogotá. Por lo tanto, la planificación de la movilidad en Bogotá debería centrarse más en beneficiar y darle más espacio a los transeúntes y ciclistas.
 - {: style="text-align: justify" } El uso de automóviles particulares sigue primando sobre el uso del transporte público. Esto podría explicar la excesiva congestión en el tránsito de la ciudad de Bogotá.
-- {: style="text-align: justify" } Para un mejor análisis hubiera sido bueno tener otros datos en cuenta, como los kilómetros recorridos por viaje, la traza, o edad de los encuestados. También utilizar otras caracterísiticas más entendibles que las ZAT y las UTAM, como lo son las localidades.
+- {: style="text-align: justify" } Para un mejor análisis hubiera sido bueno tener otros datos en cuenta, como los kilómetros recorridos por viaje, la traza, o edad de los encuestados. También utilizar otras caracterísiticas más entendibles que las ZAT y las UTAM, como lo son las localidades, pero por las limitaciones descritas no fue posible.
+- {: style="text-align: justify" } Existen varios temas a considerar y posiblemente debatibles en el dataset utilizado, como la delimitación de las ZAT/UTAM (y la utilización de Shapefiles en su publicación) y la ausencia de las localidades en cada viaje.
